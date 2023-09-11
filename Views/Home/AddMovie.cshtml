@@ -1,0 +1,36 @@
+﻿@model Movie_Temp
+@{
+    ViewData["Title"] = "Add Movie";
+}
+
+<div class="d-flex justify-content-center">
+    <div class="w-50 p-3 gap-3">
+        <form asp-action="AddMovie" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input asp-for=@Model.Name class="form-control" type="text" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                <div>
+                    <label for="exampleInputEmail1">Description</label>
+                    <input asp-for=@Model.Description class="form-control" type="text" id="description" name="description" placeholder="Description">
+                </div>
+                <div>
+                    <label for="startDate">Start Date:</label>
+                    <input asp-for=@Model.StartDate class="form-control" type="date" id="startDate" name="startDate">
+                </div>
+                <div class="col-xs-2">
+                    <label for="endDate">End Date:</label>
+                    <input asp-for=@Model.EndDate class="form-control" type="date" id="endDate" name="endDate">
+                </div>
+                <div>
+                    <label class="form-label" for="customFile">Upload Image</label>
+                    <input asp-for=@Model.Photo class="form-control" type="file"  name="photo" id="photo" accept="image/*" />
+                </div>
+                <div style="margin-top: 10px;">
+                    <input type="submit" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
